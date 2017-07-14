@@ -11,7 +11,7 @@ const mysql = require('mysql');
 const notifier = require('node-notifier');
 const _ = require('lodash');
 
-const stamp = '[DB-localSync]';
+const stamp = '[DB-Local-Sync]';
 const interval = dbConfig.interval * 60000;
 const local = mysql.createConnection(Object.assign({multipleStatements: true}, dbConfig.local));
 const remote = mysql.createConnection(Object.assign({multipleStatements: true}, dbConfig.remote));
@@ -77,7 +77,13 @@ const compareDatabases = () => {
     const hasChanges = !_.isEqual(localDatabase, remoteDatabase);
 
     if (hasChanges) {
-        notify();
+        notify({
+            actions: 'Update',
+            callback: backupDatabase,
+            title: 'Remote database is updated!',
+            message: 'Click here to sync your local database',
+            wait: true
+        });
     } else {
         console.log(`${stamp} Database has not changed since last time...`);
     }
@@ -150,19 +156,18 @@ const importBackupDatabase = () => {
 
 };
 
-const notify = () => {
-    notifier.notify({
-        actions: 'Update',
-        title: 'Database is updated!',
-        message: 'Click here to activate',
-        wait: true
-    }, (err, res) => {
+const notify = (opts) => {
+    const options = Object.assign({
+        icon: path.join(__dirname, 'assets/img/logo.png'),
+    }, opts);
+
+    notifier.notify(options, (err, res) => {
         if (err) {
             throw err;
         }
 
-        if (res === 'activate') {
-            backupDatabase();
+        if (res === 'activate' && opts.callback) {
+            opts.callback();
         }
     });
 };
@@ -186,7 +191,12 @@ const updateDatabase = () => {
                         path.join(process.cwd(), `${dbConfig.remote.database}.tmp.sql`)
                     ]);
 
-                    console.log(`${stamp} Booya! Databases are synced!`);
+                    notify({
+                        title: 'DB-Local-Sync',
+                        message: 'Booya! Databases are synced!'
+                    });
+
+                    console.log(`${stamp} `);
                 })
                 .catch(err => {
                     console.log(`error: ${err}`)
