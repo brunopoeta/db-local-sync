@@ -16,7 +16,7 @@ $ npm install -g db-local-sync
 On your working directory, create a **dbconfig.json** file, like this:
 ```js
 {
-  "interval": 5, // in minutes
+  "interval": 5, // time interval to check for new changes (in minutes)
   
   "local": { // local database settings
     "host": "localhost",
