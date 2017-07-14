@@ -1,6 +1,4 @@
-/**
- * Created by brunopoeta on 13/07/17.
- */
+#!/usr/bin/env node
 
 const del = require('del');
 const path = require('path');
