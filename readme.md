@@ -3,6 +3,9 @@
 ## What is it?
 DB-Local-Sync is a very small nodejs package that keeps your local database in sync with a remote database, for development purposes.
 
+## Limitations
+Right now, DB-Local-Sync only works with MySQL databases. But I'm already working on MongoDB support.
+
 ## How does it work?
 You simply set the configuration file with the local and remote databases and a time interval. It will check every N minutes if there are changes and you will get a notification to update it. That's it. 
 
