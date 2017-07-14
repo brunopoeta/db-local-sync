@@ -1,0 +1,8 @@
+/node_modules
+.idea/db-local-sync.iml
+.idea/jsLibraryMappings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/libraries/db_local_sync_node_modules.xml
