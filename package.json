@@ -1,12 +1,29 @@
 {
     "name": "db-local-sync",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "DB-Local-Sync lets your local database always in sync with its identical remote database, for development purposes",
+    "keywords": [
+        "development",
+        "database",
+        "mysql",
+        "nodejs",
+        "sync",
+        "db",
+        "local database"
+    ],
     "main": "index.js",
     "author": "Bruno Poeta <brunovieirapoeta@gmail.com>",
     "license": "MIT",
     "bin": {
         "db-local-sync": "./index.js"
+    },
+    "bugs": {
+        "url": "https://github.com/brunopoeta/db-local-sync/issues",
+        "email": "brunovieirapoeta@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/brunopoeta/db-local-sync"
     },
     "dependencies": {
         "del": "^3.0.0",
