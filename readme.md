@@ -6,6 +6,17 @@ DB-Local-Sync is a very small nodejs package that keeps your local database in s
 ## Limitations
 Right now, DB-Local-Sync only works with MySQL databases. But I'm already working on MongoDB support.
 
+## MySQL strict mode
+If you are having some problems while updating your local database, this may be due to the MySQL strict mode.
+
+Just add this to your **dbconfig.json** and DB-Local-Sync will temporarily disable strict mode.
+
+```js
+{
+  "strictMode": false, // disable sql strict mode
+}
+```
+
 ## How does it work?
 You simply set the configuration file with the local and remote databases and a time interval. It will check every N minutes if there are changes and you will get a notification to update it. That's it. 
 
@@ -19,6 +30,7 @@ $ npm install -g db-local-sync
 On your working directory, create a **dbconfig.json** file, like this:
 ```js
 {
+  "strictMode": false, // disable sql strict mode
   "interval": 5, // time interval to check for new changes (in minutes)
   
   "local": { // local database settings
