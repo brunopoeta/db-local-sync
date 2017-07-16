@@ -1,6 +1,6 @@
 {
     "name": "db-local-sync",
-    "version": "1.0.2",
+    "version": "1.0.4",
     "description": "DB-Local-Sync lets your local database always in sync with its identical remote database, for development purposes",
     "main": "index.js",
     "author": "Bruno Poeta <brunovieirapoeta@gmail.com>",
