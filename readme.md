@@ -22,14 +22,16 @@ On your working directory, create a **dbconfig.json** file, like this:
     "host": "localhost",
     "user": "root",
     "password": "password",
-    "database": "local_db"
+    "database": "local_db",
+    "port": 3306 // default is 3306
   },
   
   "remote": { // remote database settings
     "host": "mysql://remotedatabase",
     "user": "root",
     "password": "password",
-    "database": "remote_db"
+    "database": "remote_db",
+    "port": 3306 // default is 3306
   }
 }
 ```
@@ -46,7 +48,7 @@ You will get something like this:
 [DB-Local-Sync] Database has not changed since last time...
 ```
 
-Go on and make some change on you remote database. You'll get this to pop up on your screen:
+Go on and make some changes on your remote database. After the time interval you've set on the **dbconfig.json** passed, you'll get this to pop up on your screen:
 -
 ![Screenshot](screenshot.jpg)
 
