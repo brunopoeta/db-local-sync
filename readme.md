@@ -1,4 +1,4 @@
-![DB-Local-Sync](assets/img/logo.png)
+![DB-Local-Sync](https://github.com/brunopoeta/db-local-sync/raw/master/assets/img/logo.png)
 # DB-Local-Sync
 ## What is it?
 DB-Local-Sync is a very small nodejs package that keeps your local database in sync with a remote database, for development purposes.
@@ -51,9 +51,9 @@ You will get something like this:
 [DB-Local-Sync] Database has not changed since last time...
 ```
 
-Go on and make some changes on your remote database. After the time interval you've set on the **dbconfig.json** passed, you'll get this to pop up on your screen:
+Go on and make some changes on your remote database. After the time interval you've set on the **dbconfig.json** has passed, you'll get this to pop up on your screen:
 -
-![Screenshot](screenshot.jpg)
+![Screenshot](https://github.com/brunopoeta/db-local-sync/raw/master/screenshot.jpg)
 
 Click on it and you're going to sync your local database. You'll get another pop up message saying
 
